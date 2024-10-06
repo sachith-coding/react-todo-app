@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import styles from './style.module.css'
+import TodoItem from './components/TodoItem'
+
 
 function App() {
 
@@ -37,10 +38,13 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>
-          Simple Todo App
-        </h1>
+      <div className={styles.mainWrapper}>
+        <h1 className={styles.headerTitle}>Simple Todo App</h1>
+        <div>
+        {
+          todoList && todoList.length > 0 ? todoList.map(todoItem => (<TodoItem item={todoItem} /> )) : null
+        }
+        </div>
       </div>
     </>
   )
