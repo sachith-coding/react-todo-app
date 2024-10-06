@@ -40,9 +40,9 @@ function App() {
     <>
       <div className={styles.mainWrapper}>
         <h1 className={styles.headerTitle}>Simple Todo App</h1>
-        <div>
+        <div className={styles.todoListWrapper}>
         {
-          todoList && todoList.length > 0 ? todoList.map(todoItem => (<TodoItem item={todoItem} /> )) : null
+          todoList && todoList.length > 0 ? todoList.map(todoItem => (<TodoItem key={todoItem.id} item={todoItem} /> )) : null
         }
         </div>
       </div>
