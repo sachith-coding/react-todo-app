@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import React from 'react'
 
-const TodoItem = ({ item }) => {
+const TodoItem = ({ item, getSingleTodoItem }) => {
     return (
         <Card sx={{
             maxWidth: 450,
@@ -13,10 +13,10 @@ const TodoItem = ({ item }) => {
                 <Typography variant='h5' color={'text.secondary'}>{item?.todo}</Typography>
             </CardContent>
             <CardActions>
-            <Button sx={{
+            <Button onClick={() => getSingleTodoItem(item)} sx={{
                 backgroundColor: '#000000',
                 color: '#fff',
-                opacity: '0.75',
+                opacity: '0.75', 
                 "&:hover": {
                     backgroundColor: '#000000',
                     color: '#fff',
